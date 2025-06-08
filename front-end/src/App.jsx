@@ -31,9 +31,9 @@ function App() {
   const handleClickOnButton = (e) => setSelectedCategory(e.target.value);
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                             Engine Search & Filter                             ||
-  // ! ||--------------------------------------------------------------------------------||
+  // ! ||----88----------------------------------------------------------------------------||
   const engineApp = (db, selected, query) => {
-    const filtersProducts = db;
+    let filtersProducts = db;
     // ! ||--------------------------------------------------------------------------------||
     // ! ||                           Search input functionality                           ||
     // ! ||--------------------------------------------------------------------------------||
@@ -47,7 +47,7 @@ function App() {
     // ! ||                        Input Radio Filter functionality                        ||
     // ! ||--------------------------------------------------------------------------------||
     if (selected) {
-      const filtersProducts = db.filter(
+      filtersProducts = db.filter(
         ({ title, newPrice, color, company, category }) => {
           title.toLowerCase() === selected ||
             newPrice.toLowerCase() === selected ||
