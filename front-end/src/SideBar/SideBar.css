@@ -1,0 +1,40 @@
+.side-bar {
+  position: fixed;
+  width: 15%;
+  border-right: 2px solid #ccc;
+  height: 100%;
+  background-color: #fff;
+}
+.logo-container {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+  position: relative;
+}
+.sidebar-title::after {
+  content: "";
+  width: 140px;
+  height: 2px;
+  background-color: #fcc860;
+  position: absolute;
+  top: 29px;
+  left: 0px;
+}
+.filters-container {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar-logo {
+  font-size: 60px;
+  color: #363636;
+  cursor: pointer;
+}
