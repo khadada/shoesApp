@@ -1,6 +1,6 @@
 import "./Products.css";
 import Card from "../components/Card";
-const Products = () => {
+const Products = ({ result }) => {
   return (
     <section className="card-container">
       {/* 
@@ -8,7 +8,7 @@ const Products = () => {
   ||                            card                                      ||
   ||----------------------------------------------------------------------|| 
   */}
-      <Card />
+      {result.map((item) => item)}
     </section>
   );
 };

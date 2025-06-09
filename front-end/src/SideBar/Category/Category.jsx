@@ -2,8 +2,6 @@ import Input from "../../components/Input";
 import "./Category.css";
 
 const Category = ({ handleRadioInputChange }) => {
-  console.log(handleRadioInputChange);
-
   return (
     <div>
       <h2 className="sidebar-title">Category</h2>
@@ -14,16 +12,17 @@ const Category = ({ handleRadioInputChange }) => {
           value={""}
           name={"x"}
         />
-        <Input
-          title={"Sneakers"}
-          handleRadioInputChange={handleRadioInputChange}
-          value={"sneakers"}
-          name={"x"}
-        />
+
         <Input
           title={"Flats"}
           handleRadioInputChange={handleRadioInputChange}
           value={"flats"}
+          name={"x"}
+        />
+        <Input
+          title={"Sneakers"}
+          handleRadioInputChange={handleRadioInputChange}
+          value={"sneakers"}
           name={"x"}
         />
         <Input
