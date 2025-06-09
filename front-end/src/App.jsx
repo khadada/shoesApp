@@ -33,9 +33,15 @@ function App() {
   const handleClickOnButton = (e) => setSelectedCategory(e.target.value);
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                             Engine Search & Filter                             ||
+<<<<<<< HEAD
   // ! ||--------------------------------------------------------------------------------||
   const engineApp = (data, selected, query) => {
     let filtersProducts = data;
+=======
+  // ! ||----88----------------------------------------------------------------------------||
+  const engineApp = (db, selected, query) => {
+    let filtersProducts = db;
+>>>>>>> 95a42d13a3fa5f26b3285e19e461f5e2847bcc39
     // ! ||--------------------------------------------------------------------------------||
     // ! ||                           Search input functionality                           ||
     // ! ||--------------------------------------------------------------------------------||
@@ -49,6 +55,7 @@ function App() {
     // ! ||                        Input Radio Filter functionality                        ||
     // ! ||--------------------------------------------------------------------------------||
     if (selected) {
+<<<<<<< HEAD
       filtersProducts = filtersProducts.filter(
         ({ title, newPrice, color, company, category }) =>
           title === selected ||
@@ -56,6 +63,16 @@ function App() {
           company === selected ||
           category === selected ||
           color === selected
+=======
+      filtersProducts = db.filter(
+        ({ title, newPrice, color, company, category }) => {
+          title.toLowerCase() === selected ||
+            newPrice.toLowerCase() === selected ||
+            company.toLowerCase() === selected ||
+            category.toLowerCase() === selected ||
+            color.toLowerCase() === selected;
+        }
+>>>>>>> 95a42d13a3fa5f26b3285e19e461f5e2847bcc39
       );
     }
     return filtersProducts.map(
