@@ -9,7 +9,7 @@ import SideBar from "./SideBar/SideBar";
 // ! ||--------------------------------------------------------------------------------||
 // ! ||                                    Database;                                   ||
 // ! ||--------------------------------------------------------------------------------||
-import data from "./db/data";
+import database from "./db/data";
 import Card from "./components/Card";
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -24,7 +24,9 @@ function App() {
   // ! ||                               Input Radio Filter                               ||
   // ! ||--------------------------------------------------------------------------------||
 
-  const handleRadioInputChange = (e) => setSelectedCategory(e.target.value);
+  const handleRadioInputChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                           Buttons Recommended filter                           ||
   // ! ||--------------------------------------------------------------------------------||
@@ -32,8 +34,8 @@ function App() {
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                             Engine Search & Filter                             ||
   // ! ||--------------------------------------------------------------------------------||
-  const engineApp = (db, selected, query) => {
-    const filtersProducts = db;
+  const engineApp = (data, selected, query) => {
+    let filtersProducts = data;
     // ! ||--------------------------------------------------------------------------------||
     // ! ||                           Search input functionality                           ||
     // ! ||--------------------------------------------------------------------------------||
@@ -47,14 +49,13 @@ function App() {
     // ! ||                        Input Radio Filter functionality                        ||
     // ! ||--------------------------------------------------------------------------------||
     if (selected) {
-      const filtersProducts = db.filter(
-        ({ title, newPrice, color, company, category }) => {
-          title.toLowerCase() === selected ||
-            newPrice.toLowerCase() === selected ||
-            company.toLowerCase() === selected ||
-            category.toLowerCase() === selected ||
-            color.toLowerCase() === selected;
-        }
+      filtersProducts = filtersProducts.filter(
+        ({ title, newPrice, color, company, category }) =>
+          title === selected ||
+          newPrice == selected ||
+          company === selected ||
+          category === selected ||
+          color === selected
       );
     }
     return filtersProducts.map(
@@ -84,14 +85,17 @@ function App() {
       )
     );
   };
-  const result = engineApp(data, selectedCategory, query);
+  let result = engineApp(database, selectedCategory, query);
+  console.log(`The value of category selected is: ${selectedCategory}`);
+
+  console.log(result);
 
   return (
     <>
-      <SideBar handleRadioInputChange={handleClickOnButton} />
-      <Nav />
-      <Recommended />
-      <Products />
+      <SideBar handleRadioInputChange={handleRadioInputChange} />
+      <Nav query={query} handleRadioInputChange={handleRadioInputChange} />
+      <Recommended handleRadioInputChange={handleRadioInputChange} />
+      <Products result={result} />
     </>
   );
 }

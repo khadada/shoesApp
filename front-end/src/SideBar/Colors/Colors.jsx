@@ -1,7 +1,7 @@
 import Input from "../../components/Input";
 import "./Colors.css";
 
-const Colors = (handleRadioInputChange) => {
+const Colors = ({ handleRadioInputChange }) => {
   return (
     <div className="minus-ml">
       <h2 className="sidebar-title">Colors</h2>
