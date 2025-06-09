@@ -18,16 +18,16 @@ const Card = ({
       <div className="card-details">
         <h3 className="card-title">{title}</h3>
         <div className="card-reviews">
-          {/* <AiFillStar className="rating-star" />
           <AiFillStar className="rating-star" />
           <AiFillStar className="rating-star" />
-          <AiFillStar className="rating-star" /> */}
+          <AiFillStar className="rating-star" />
+          <AiFillStar className="rating-star" />
+          {/* {star}
           {star}
           {star}
           {star}
           {star}
-          {star}
-          {star}
+          {star} */}
           <span className="total-reviews">{reviews}</span>
         </div>
         <div className="card-price">
