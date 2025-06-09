@@ -40,8 +40,8 @@ function App() {
     // ! ||                           Search input functionality                           ||
     // ! ||--------------------------------------------------------------------------------||
     if (query) {
-      const searchedItems = data.filter(({ title }) =>
-        title.toLowerCase().indexOf(query.toLowerCase())
+      const searchedItems = data.filter(
+        ({ title }) => title.toLowerCase().indexOf(query.toLowerCase()) !== -1
       );
       filtersProducts = searchedItems;
     }
@@ -93,7 +93,7 @@ function App() {
   return (
     <>
       <SideBar handleRadioInputChange={handleRadioInputChange} />
-      <Nav query={query} handleRadioInputChange={handleRadioInputChange} />
+      <Nav query={query} handleSearchInputChange={handleSearchInputChange} />
       <Recommended handleClickOnButton={handleClickOnButton} />
       <Products result={result} />
     </>
