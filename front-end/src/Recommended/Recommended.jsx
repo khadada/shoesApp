@@ -1,15 +1,36 @@
+import Button from "../components/Button";
 import "./Recommended.css";
-const Recommended = () => {
+const Recommended = ({ handleClickOnButton }) => {
   return (
     <>
       <div>
         <h2 className="recommended-title">Recommended</h2>
         <div className="recommended-btn-container">
-          <button className="xbtn">All Products</button>
-          <button className="xbtn">Nike</button>
-          <button className="xbtn">Adidas</button>
-          <button className="xbtn">Puma</button>
-          <button className="xbtn">Van</button>
+          <Button
+            handleClickOnButton={handleClickOnButton}
+            value={""}
+            innerText={"All Products"}
+          />
+          <Button
+            handleClickOnButton={handleClickOnButton}
+            value={"Nike"}
+            innerText={"Nike"}
+          />
+          <Button
+            handleClickOnButton={handleClickOnButton}
+            value={"Adidas"}
+            innerText={"Adidas"}
+          />
+          <Button
+            handleClickOnButton={handleClickOnButton}
+            value={"Puma"}
+            innerText={"Puma"}
+          />
+          <Button
+            handleClickOnButton={handleClickOnButton}
+            value={"Vans"}
+            innerText={"Vans"}
+          />
         </div>
       </div>
     </>

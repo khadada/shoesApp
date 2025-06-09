@@ -94,7 +94,7 @@ function App() {
     <>
       <SideBar handleRadioInputChange={handleRadioInputChange} />
       <Nav query={query} handleRadioInputChange={handleRadioInputChange} />
-      <Recommended handleRadioInputChange={handleRadioInputChange} />
+      <Recommended handleClickOnButton={handleClickOnButton} />
       <Products result={result} />
     </>
   );
